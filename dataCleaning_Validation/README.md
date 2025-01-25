@@ -1,4 +1,4 @@
-# Final Analysis and Validation Plan Report (최종 분석 및 검증 방안 리포트)
+# Data Cleaning and Validation Plan
 
 ## 1. Project Overview (프로젝트 개요)
 
