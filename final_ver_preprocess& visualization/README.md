@@ -1,72 +1,106 @@
-# Cancer Data Analysis Project
+# Cancer Treatment Analysis Project
 
-## Project Overview
-This project aims to identify significant patterns between tumor types and patient survivability by analyzing large-scale cancer datasets (1.7 million patient data, over 200MB).  
-It leverages Python, data analysis techniques, and cloud technologies to derive meaningful insights.
+## Overview
 
-## Key Objectives
-- Extract valuable insights through in-depth analysis of cancer datasets
-- Enhance data exploration, visualization, and interpretation skills
-- Provide data-driven recommendations for improving healthcare strategies
-- Evaluate data analysis technologies using Google Colab and Generative AI
-- Improve proficiency in cloud technologies
+This project analyzes cancer treatment regimens and patient outcomes to derive meaningful insights. It includes preprocessing, visualization, and statistical analysis to support decision-making in healthcare.
 
-## Key Features
-- Import cancer datasets into a PostgreSQL database
-- Perform data exploration and visualization
-- Identify specific use cases and provide actionable insights
-- Compile comprehensive analysis reports
+## Prerequisites
 
-## Tech Stack
-- Python
-- PostgreSQL
-- Jupyter Notebook
-- pandas, Matplotlib, Seaborn, Plotly, Scikit-learn
+Ensure you have the following dependencies installed:
 
-## Dataset Description
-This project involves analyzing patient treatment regimens and survival data. The following key columns are used:
+- Python 3.8+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- plotly
+- SQLAlchemy
 
-- **encore_patient_id**: Unique patient identifier
-- **merged_regimen_id**: Treatment regimen ID
-- **intent_of_treatment**: Purpose of treatment (curative vs palliative)
-- **date_decision_to_treat**: Date of treatment decision
-- **start_date_of_regimen**: Treatment start date
-- **mapped_regimen**: Assigned treatment regimen
-- **clinical_trial**: Participation in clinical trials (Yes/No)
-- **chemo_radiation**: Chemotherapy/Radiation therapy indicator
-- **benchmark_group**: Comparison group
-- **patientid**: Unique patient identifier
-- **vitalstatus**: Survival status
-- **vitalstatusdate**: Last updated survival status date
-- **age**: Patient’s age
-- **site_icd10_o2_3char**: Cancer type (ICD-10 code)
-- **stage_best**: Cancer staging information
-- **comorbidities_27_03**: Comorbidities (pre-existing conditions)
-- **seq_var**: Genetic mutation information
-- **duration**: Survival duration (calculated based on follow-up period)
-- **event_mapped**: Mortality indicator (1=Deceased, 0=Survived, -1=Unknown)
-- **previous_regimen**: Previous treatment regimen
-- **modification_reason**: Reason for treatment modification
+Install the required packages using:
 
-## How to Run
-1. Install the required libraries:
-   ```bash
-   pip install -r requirements_en.txt
-   ```
-2. Launch Jupyter Notebook:
-   ```bash
-   jupyter notebook
-   ```
-3. Open `cancer_data_analysis_presentation_en.ipynb` and follow the analysis.
+```bash
+pip install -r requirements.txt
+```
 
-## End Users
-- **Healthcare Professionals**: Optimize treatment regimens
-- **Administrators**: Develop hospital and healthcare management strategies
-- **Policy Makers**: Establish medical policies and patient care guidelines
+## Data Loading
 
-## Contributions
-This project is an open collaboration among healthcare researchers, data scientists, and engineers. Feel free to submit a Pull Request if you would like to contribute.
+Before running the analysis, load the dataset into the database using [`cancer_data_importer`](https://github.com/JustinCoKA/ProjectCancerData/tree/main/cancer_data_importer). Follow these steps:
 
----
+```bash
+git clone https://github.com/JustinCoKA/ProjectCancerData.git
+cd ProjectCancerData/cancer_data_importer
+python import_data.py
+```
 
-© 2025 Cancer Data Analysis Project
+## Project Structure
+
+```
+/Users/juhwanlee/Desktop/coding/final_ver_data/
+├── Justin_Cancer Date Analysis.pdf
+├── README.md
+├── cancer_data_analysis_presentation.ipynb
+├── data
+│   ├── extracted_visualization_data
+│   │   ├── visualize_cancer_type.csv
+│   │   ├── visualize_evolution.csv
+│   │   ├── visualize_modifications.csv
+│   │   ├── visualize_success_rate.csv
+│   │   ├── visualize_survival.csv
+│   ├── output
+│   │   ├── visualizations
+│   ├── processed
+│   │   ├── final_merged_data.csv
+│   ├── raw
+│   │   ├── initial_raw_data.csv
+├── main.py
+├── missing_values.xlsx
+├── requirements.txt
+├── sample_data.csv
+├── scripts
+│   ├── __init__.py
+│   ├── final_preprocess.py
+│   ├── initial_preprocess.py
+│   ├── visualization.py
+│   ├── visualization_code.py
+```
+
+## Usage
+
+### Running the Pipeline
+Run the main script to execute the complete data processing and visualization pipeline:
+
+```bash
+python main.py
+```
+
+### Functionality of `main.py`
+The `main.py` script automates data processing and visualization in the following steps:
+
+1. **Environment Setup**:
+   - Adds the `scripts` directory to the system path.
+   - Imports necessary functions from the preprocessing and visualization scripts.
+
+2. **Data Processing**:
+   - Loads raw data from `raw/initial_raw_data.csv`.
+   - Executes **initial preprocessing** using `initial_data_preparation()`.
+   - Saves the processed data into `processed/final_merged_data.csv`.
+   - Runs **final preprocessing** using `execute_final_preprocessing()`.
+
+3. **Visualization Data Extraction**:
+   - Extracts necessary data for visualizations and saves it to `extracted_visualization_data/`.
+
+4. **Data Visualization**:
+   - Generates multiple treatment-related visualizations:
+     - **Treatment Success Rate** (`visualize_treatment_success_rate()`)
+     - **Cancer Type Success Rate** (`visualize_cancer_type_success_rate()`)
+     - **Treatment Modifications** (`visualize_treatment_modifications()`)
+     - **Kaplan-Meier Survival Analysis** (`visualize_kaplan_meier()`)
+     - **Treatment Regimen Changes** (`visualize_treatment_regimen_changes()`)
+
+5. **Database Connection (Planned but Not Implemented)**:
+   - The script contains placeholders for PostgreSQL database connections.
+
+## Acknowledgments
+
+This project utilizes real-world datasets and open-source libraries to drive meaningful analysis in cancer treatment research.
+
