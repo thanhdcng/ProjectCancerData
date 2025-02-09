@@ -27,7 +27,27 @@ This project aims to identify significant patterns between tumor types and patie
 ## Project Structure
 
 ```
-/Users/juhwanlee/Documents/GitHub/ProjectCancerData
+├── 1. Data_Preparation_and_Management
+│   ├── Scripts and SQL queries for cleaning and validating regimen data.
+│   ├── ER diagrams and data import modules for PostgreSQL integration.
+│   ├── Cancer data importer scripts for patient, tumor, and regimen data.
+├── 2. EDA
+│   ├── Scripts for Exploratory Data Analysis (EDA) including summary statistics and visualization.
+│   ├── Outputs include dataset summaries and variable distribution plots.
+├── 3. DEMO
+│   ├── Sample analysis showcasing key findings such as survival rates and regimen changes.
+│   ├── Includes Kaplan-Meier survival analysis and regimen frequency trends.
+├── 4. Final_ver
+│   ├── The final version of the analysis with refined visualizations and structured reports.
+│   ├── Jupyter notebooks, processed data, and scripts for final presentations.
+├── 5. Presentation
+│   ├── Final presentation slides and analysis reports summarizing key findings.
+└── README.md
+```
+
+
+
+```
 ├── 1. Data_Preparation_and_Management
 │   ├── DATA RELATED TO REGIMENS CLEANING AND VALIDATION .pdf
 │   ├── [ER diagram] Cancer_Data.pdf
