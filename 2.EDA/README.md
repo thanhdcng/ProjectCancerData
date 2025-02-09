@@ -32,7 +32,7 @@ eda/
 
 Clone the repository:
 ```bash
-git clone https://github.com/your-username/cancer_data_eda.git
+git clone https://github.com/JustinCoKA/cancer_data_eda.git
 cd cancer_data_eda
 ```
 
