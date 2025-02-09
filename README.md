@@ -1,58 +1,159 @@
 # Cancer Data Analytics Project
 
-## 프로젝트 개요 | Project Overview
+## Project Overview
 
-이 프로젝트는 대규모 암 데이터셋(1.7백만 명의 환자 데이터, 200MB 이상)을 분석하여 종양 유형과 환자 생존율 간의 중요한 패턴을 파악하는 것을 목표로 합니다. Python과 데이터 분석 기술, 클라우드 기술을 활용하여 의미 있는 인사이트를 도출합니다.
+This project aims to identify significant patterns between tumor types and patient survivability by analyzing large-scale cancer datasets containing 1.7 million patient records (over 200MB). The project utilizes Python, data analysis techniques, and cloud technologies to derive meaningful insights that can inform healthcare strategies.
 
-This project aims to identify significant patterns between tumor types and patient survivability by analyzing large-scale cancer datasets (1.7 million patient data, over 200MB). It leverages Python, data analysis techniques, and cloud technologies to derive meaningful insights.
+## Key Objectives
 
-## 주요 목표 | Key Objectives
+- **Extract valuable insights** through in-depth analysis of cancer datasets.
+- **Enhance data exploration, visualization, and interpretation skills** to communicate findings effectively.
+- **Provide data-driven recommendations** for improving healthcare strategies.
+- **Evaluate data analysis technologies** including PostgreSQL, Google Colab, and Generative AI.
 
-- 암 데이터셋의 심층 분석을 통한 가치 있는 인사이트 추출
-- 데이터 탐색, 시각화, 해석 기술 향상
-- 의료 전략 개선을 위한 데이터 기반 권장사항 제시
-- Google Colab 및 생성형 AI를 활용한 데이터 분석 기술 평가
-- 클라우드 기술 활용 능력 향상
+## Tech Stack
 
-- Extract valuable insights through in-depth analysis of cancer datasets
-- Enhance data exploration, visualization, and interpretation skills
-- Provide data-driven recommendations for improving healthcare strategies
-- Evaluate data analysis technologies using Google Colab and Generative AI
-- Improve proficiency in cloud technologies
+- **Programming Language**: Python  
+- **Database**: PostgreSQL  
+- **Development Environment**: Jupyter Notebook, Google Colab  
+- **Libraries & Tools**: `pandas`, `Matplotlib`, `Seaborn`, `Plotly`
 
-## 주요 기능 | Key Features
+## End Users
 
-- PostgreSQL 데이터베이스로 암 데이터셋 가져오기
-- 데이터 탐색 및 시각화
-- 특정 사용 사례 식별 및 실행 가능한 인사이트 제공
-- 종합적인 분석 보고서 작성
+- **Healthcare Professionals**: To analyze treatment outcomes and improve patient care.
+- **Administrators**: To monitor regimen effectiveness and streamline hospital processes.
+- **Policy Makers**: To inform healthcare policies and improve survival rates.
 
-- Import cancer datasets into PostgreSQL database
-- Data exploration and visualization
-- Identify specific use cases and provide actionable insights
-- Compile comprehensive analysis reports
+## Project Structure
 
-## 기술 스택 | Tech Stack
+```
+├── 1. Data_Preparation_and_Management
+│   ├── Scripts and SQL queries for cleaning and validating regimen data.
+│   ├── ER diagrams and data import modules for PostgreSQL integration.
+│   ├── Cancer data importer scripts for patient, tumor, and regimen data.
+├── 2. EDA
+│   ├── Scripts for Exploratory Data Analysis (EDA) including summary statistics and visualization.
+│   ├── Outputs include dataset summaries and variable distribution plots.
+├── 3. DEMO
+│   ├── Sample analysis showcasing key findings such as survival rates and regimen changes.
+│   ├── Includes Kaplan-Meier survival analysis and regimen frequency trends.
+├── 4. Final_ver
+│   ├── The final version of the analysis with refined visualizations and structured reports.
+│   ├── Jupyter notebooks, processed data, and scripts for final presentations.
+├── 5. Presentation
+│   ├── Final presentation slides and analysis reports summarizing key findings.
+└── README.md
+```
 
-- Python
-- PostgreSQL
-- Jupyter Notebook
-- pandas, Matplotlib, Seaborn
 
-## 최종 사용자 | End Users
 
-- 의료 전문가 | Healthcare Professionals
-- 관리자 | Administrators
-- 정책 입안자 | Policy Makers
+```
+├── 1. Data_Preparation_and_Management
+│   ├── DATA RELATED TO REGIMENS CLEANING AND VALIDATION .pdf
+│   ├── [ER diagram] Cancer_Data.pdf
+│   ├── cancer_data_importer
+│   │   ├── README.md
+│   │   ├── __init__.py
+│   │   ├── config
+│   │   │   ├── __init__.py
+│   │   │   └── db_config.py
+│   │   ├── importers
+│   │   │   ├── __init__.py
+│   │   │   ├── av_gene_importer.py
+│   │   │   ├── av_patient_importer.py
+│   │   │   ├── av_tumour_importer.py
+│   │   │   ├── base_importer.py
+│   │   │   ├── rtds_combined_importer.py
+│   │   │   ├── rtds_episode_importer.py
+│   │   │   ├── rtds_exposure_importer.py
+│   │   │   ├── rtds_prescription_importer.py
+│   │   │   ├── sact_cycle_importer.py
+│   │   │   ├── sact_drug_detail_importer.py
+│   │   │   ├── sact_outcome_importer.py
+│   │   │   └── sact_regimen_importer.py
+│   │   └── main.py
+│   └── dataCleaning_Validation
+│       ├── DATA RELATED TO REGIMENS CLEANING AND VALIDATION .pdf
+│       ├── README.md
+│       └── data_imputation
+│           ├── av_gene
+│           │   └── Check_missing_av_gene.sql
+│           ├── av_patient
+│           │   ├── Check_missing_av_patient.sql
+│           │   ├── Duplicate_check_av_patient.sql
+│           │   └── av_patient_vitalstatusdate.py
+│           ├── av_tumour
+│           │   ├── Check_missing_av_tumour.sql
+│           │   └── Duplicate_check_av_tumour.sql
+│           ├── rtds_regimen
+│           │   ├── Duplicate_check_sact_regimen.sql
+│           │   ├── FK_Intergrity_check_regimenNPatient.sql
+│           │   ├── FK_Intergrity_check_regimenNtumour.sql
+│           │   └── sact_regimen_major_flled.py
+│           └── supportdata
+│               ├── start_date_of_cycle.sql
+│               └── supportDataCheck.py
+├── 2.EDA
+│   ├── eda_main.py
+│   ├── eda_output
+│   │   ├── dataset_summary.csv
+│   │   └── variable_distributions
+│   │       ├── age_distribution.png
+│   │       ├── dose_distribution.png
+│   │       └── regimen_frequency.png
+│   ├── eda_preprocessing.py
+│   ├── eda_summary.txt
+│   └── eda_visualization.py
+├── 3.DEMO
+│   ├── demo_analysis.py
+│   ├── demo_output
+│   │   ├── demo_summary_report.txt
+│   │   ├── gene_mutations_regimen_changes.png
+│   │   ├── gene_mutations_regimen_changes_fixed.png
+│   │   ├── kaplan_meier_survival_analysis.png
+│   │   ├── plot_tumor_stage_survival.png
+│   │   ├── regimen
+│   │   │   ├── all_regimen
+│   │   │   │   ├── all_average_survival_rate_by_regimen_with_numbers.png
+│   │   │   │   └── all_regimen_mapping_table.csv
+│   │   │   └── top_regimens
+│   │   │       ├── N_regimen_mapping_table.csv
+│   │   │       └── top_average_survival_rate_by_regimen_with_numbers.png
+│   │   ├── regimen_changes_over_years.png
+│   │   └── survival_rate_by_cancer_type.png
+│   └── demo_visualization.py
+├── 4. Final_ver
+│   ├── README.md
+│   ├── cancer_data_analysis_presentation.ipynb
+│   ├── data
+│   │   ├── extracted_visualization_data
+│   │   │   └── readme.md
+│   │   ├── output
+│   │   │   └── readme.md
+│   │   ├── processed
+│   │   │   └── readme.md
+│   │   └── raw
+│   │       └── readme.md
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── sample_data.csv
+│   └── scripts
+│       ├── __init__.py
+│       ├── final_preprocess.py
+│       ├── initial_preprocess.py
+│       ├── visualization.py
+│       └── visualization_code.py
+├── 5. Presentation
+│   ├── Justin_Cancer Data Analysis.pdf
+│   └── cancer_data_analysis_presentation.ipynb
+└── README.md
+```
 
-## 타임라인 | Timeline
+## Timeline
 
-- 1주차: 프로젝트 설정 및 데이터 로딩
-- 2-3주차: 초기 차트 생성 및 탐색적 데이터 분석
-- 4-5주차: 심화 분석 및 인터랙티브 차트 개발
-- 6주차: 최종 프레젠테이션 및 비디오 제작
-
-- Week 1: Project setup and data loading
-- Weeks 2-3: Initial chart creation and exploratory data analysis
-- Weeks 4-5: Advanced analysis and interactive chart development
-- Week 6: Final presentation and video production
+| Week  | Task |
+|-------|------|
+| 1  | Project setup and data loading |
+| 2-3 | Initial chart creation and exploratory data analysis |
+| 4-5 | Advanced analysis and interactive chart development |
+| 6  | Final presentation and video production |

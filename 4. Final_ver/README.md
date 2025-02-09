@@ -1,11 +1,9 @@
 # Cancer Treatment Analysis Project
 
 ## Overview
-
-This project analyzes cancer treatment regimens and patient outcomes to derive meaningful insights. It includes preprocessing, visualization, and statistical analysis to support decision-making in healthcare.
+This project analyzes cancer treatment regimens and patient outcomes to derive meaningful insights. The analysis includes data preprocessing, visualization, and statistical evaluations to support decision-making in healthcare.
 
 ## Prerequisites
-
 Ensure you have the following dependencies installed:
 
 - Python 3.8+
@@ -14,17 +12,17 @@ Ensure you have the following dependencies installed:
 - matplotlib
 - seaborn
 - plotly
+- lifelines
 - SQLAlchemy
 
-Install the required packages using:
+You can install the required packages using:
 
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Data Loading
-
-Before running the analysis, load the dataset into the database using [`cancer_data_importer`](https://github.com/JustinCoKA/ProjectCancerData/tree/main/cancer_data_importer). Follow these steps:
+Before running the analysis, ensure the dataset is imported into the database using [`cancer_data_importer`](https://github.com/JustinCoKA/ProjectCancerData/tree/main/cancer_data_importer). Follow these steps:
 
 ```bash
 git clone https://github.com/JustinCoKA/ProjectCancerData.git
@@ -33,10 +31,9 @@ python import_data.py
 ```
 
 ## Project Structure
-
 ```
 /Users/juhwanlee/Desktop/coding/final_ver_data/
-├── Justin_Cancer Date Analysis.pdf
+├── Justin_Cancer Data Analysis.pdf
 ├── README.md
 ├── cancer_data_analysis_presentation.ipynb
 ├── data
@@ -67,14 +64,14 @@ python import_data.py
 ## Usage
 
 ### Running the Pipeline
-Run the main script to execute the complete data processing and visualization pipeline:
+To execute the complete data processing and visualization pipeline, run the main script:
 
 ```bash
 python main.py
 ```
 
 ### Functionality of `main.py`
-The `main.py` script automates data processing and visualization in the following steps:
+The `main.py` script automates the data processing and visualization process in the following steps:
 
 1. **Environment Setup**:
    - Adds the `scripts` directory to the system path.
@@ -97,10 +94,16 @@ The `main.py` script automates data processing and visualization in the followin
      - **Kaplan-Meier Survival Analysis** (`visualize_kaplan_meier()`)
      - **Treatment Regimen Changes** (`visualize_treatment_regimen_changes()`)
 
-5. **Database Connection (Planned but Not Implemented)**:
-   - The script contains placeholders for PostgreSQL database connections.
+## Code Explanation
 
-## Acknowledgments
+### `final_preprocess.py`
+Handles advanced data cleaning and feature engineering to prepare the dataset for analysis.
 
-This project utilizes real-world datasets and open-source libraries to drive meaningful analysis in cancer treatment research.
+### `initial_preprocess.py`
+Processes raw data, handles missing values, and standardizes formats for consistency.
 
+### `visualization.py`
+Generates various plots and charts to visualize key trends in cancer treatment effectiveness.
+
+### `visualization_code.py`
+Includes functions that generate Kaplan-Meier survival curves and other advanced visual analytics.
