@@ -1,0 +1,16 @@
+Missing Values Summary:
+encore_patient_id                 0
+merged_regimen_id                 0
+height_at_start_of_regimen    89423
+weight_at_start_of_regimen    88399
+intent_of_treatment               0
+date_decision_to_treat            0
+start_date_of_regimen             0
+mapped_regimen                    0
+clinical_trial                    0
+chemo_radiation                   0
+benchmark_group                   0
+link_number                       0
+linknumber                        0
+patientid                         0
+age                               0

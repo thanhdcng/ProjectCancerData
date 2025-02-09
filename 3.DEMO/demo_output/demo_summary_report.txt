@@ -1,0 +1,11 @@
+
+    Demo Summary Report
+    ====================
+    1. Number of data samples: 5000
+    2. Average survival rate: 7.87%
+    3. Key analysis points:
+       - Average survival rate by regimen
+       - Success rate by cancer type
+       - Kaplan-Meier survival analysis results
+    ====================
+    
