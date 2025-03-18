@@ -122,7 +122,7 @@ def load_and_prepare_data(connection_string, output_file="final_merged_data.csv"
             raise ValueError(f"Failed to load {df_name}")
 
     av_patient.columns = av_patient.columns.str.strip().str.lower()
-
+    av_patient = av_patient.rename(columns={"linknumber": "link_number"}) # av_patient has 'linknumber' instead of 'link_number'
     patient_data = pd.merge(sact_regimen, av_patient[["link_number", "patientid"]], on="link_number", how="inner")
     patient_data_with_age = pd.merge(patient_data, av_tumour[["patientid", "age"]], on="patientid", how="inner")
 

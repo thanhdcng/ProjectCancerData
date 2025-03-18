@@ -64,6 +64,12 @@ def load_and_prepare_data_with_update(connection_string, output_file="final_merg
     av_gene.columns = av_gene.columns.str.strip().str.lower()
 
     # Merge datasets
+    # Clean and standardize column names
+    av_patient.columns = av_patient.columns.str.strip().str.lower() 
+    # Rename 'linknumber' to 'link_number' if necessary:
+    if 'linknumber' in av_patient.columns:
+        av_patient = av_patient.rename(columns={'linknumber': 'link_number'}) # changed the name of the column to match the column name in the sact_regimen table
+
     patient_data = pd.merge(
         sact_regimen,
         av_patient[["link_number", "patientid", "vitalstatus", "vitalstatusdate"]],
@@ -165,7 +171,7 @@ def update_database_with_survival_rates(connection_string, survival_data, table_
         print(f"Error updating the database: {e}")
 
 if __name__ == "__main__":
-    connection_string = "postgresql://postgres:wnghks12!!@localhost:5432/juhwanlee"
+    connection_string = "postgresql://postgres:Tan%40123@localhost:5432/postgres"
     output_file = "demo_output/final_merged_data.csv"
     os.makedirs("demo_output", exist_ok=True)
     final_merged_data = load_and_prepare_data_with_update(connection_string, output_file)

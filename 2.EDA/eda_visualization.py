@@ -79,8 +79,7 @@ def visualize_data(data, column, plot_type="hist", bins=30, color="skyblue", tit
         plt.show()
     plt.close()
 
-
-def visualize_regimen_frequency(data, output_path="eda/eda_output/variable_distributions/regimen_frequency.png"):
+def visualize_regimen_frequency(data, output_path="eda_output/variable_distributions/regimen_frequency.png"):
     plt.figure(figsize=(18, 10))
     colors = plt.cm.Blues(np.linspace(0.4, 0.8, 20))
 
@@ -110,7 +109,8 @@ def visualize_regimen_frequency(data, output_path="eda/eda_output/variable_distr
         plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
 
-def visualize_dose_distribution(data, output_path="eda/eda_output/variable_distributions/dose_distribution.png"):
+
+def visualize_dose_distribution(data, output_path="eda_output/variable_distributions/dose_distribution.png"):
     # Set the style for a cleaner look
     plt.style.use('seaborn-v0_8-whitegrid')
 
@@ -173,7 +173,7 @@ def visualize_dose_distribution(data, output_path="eda/eda_output/variable_distr
         plt.savefig(output_path, dpi=300, bbox_inches="tight", facecolor='white')
     plt.close()
 
-def visualize_age_distribution(data, output_path="eda/eda_output/variable_distributions/age_distribution.png"):
+def visualize_age_distribution(data, output_path="eda_output/variable_distributions/age_distribution.png"):
     """
     Visualize age distribution.
 

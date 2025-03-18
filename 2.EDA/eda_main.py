@@ -3,7 +3,7 @@ from eda_visualization import load_data_from_csv, visualize_regimen_frequency, v
     visualize_age_distribution
 
 # PostgreSQL connection string
-connection_str = "postgresql://postgres:wnghks12!!@localhost:5432/juhwanlee"
+connection_str = "postgresql://postgres:Tan%40123@localhost:5432/postgres"
 output_file_path = "eda_output/final_merged_data.csv"
 
 

@@ -272,7 +272,7 @@ def plot_gene_mutations(data):
         print("Warning: seq_var column is missing. Skipping gene mutation analysis.")
 
 def main():
-    file_path = "demo_output/demo_merged_data.csv"
+    file_path = "demo_output/final_merged_data.csv" #changed the name of the  output file
     data = load_data(file_path)
 
     required_columns = ["mapped_regimen", "survival_rate", "site_icd10_o2_3char", "duration", "event"]

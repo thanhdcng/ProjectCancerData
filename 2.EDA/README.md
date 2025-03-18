@@ -42,7 +42,7 @@ pip install pandas numpy matplotlib seaborn
 ```
 
 ## Usage
-
+# before running the main try to delete the existing images in eda_output/variable_distribution as images will not override
 Run `main.py` to start the EDA process:
 ```bash
 python main.py
